@@ -18,27 +18,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"The Republic by Plato"];
-    
-    NSRange rangeOfTitle = [attributedString.string rangeOfString:@"The Republic"];
-    
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor alizarinColor] range:rangeOfTitle];
-    
-    UIFont *font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:self.stringLabel.font.pointSize];
-    
-    NSRange rangeOfAuthor = [attributedString.string rangeOfString:@"Plato"];
-    
-    [attributedString addAttribute:NSFontAttributeName value:font range:rangeOfAuthor];
-    
-    
-    
-    self.stringLabel.attributedText = attributedString;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
+    self.stringLabel.attributedText = [self configureBookInfoString:textField.text];
     
     return YES;
+}
+
+-(NSAttributedString*)configureBookInfoString:(NSString*)infoString {
+    if (![infoString containsString:@"by"]) {
+        return [[NSAttributedString alloc] initWithString:infoString];
+    }
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:infoString];
+    
+    NSRange rangeOfBy = [attributedString.string rangeOfString:@"by"];
+    NSRange rangeOfTitle = NSMakeRange(0, rangeOfBy.location);
+    NSUInteger lengthOfAuthorName = attributedString.length - NSMaxRange(rangeOfBy);
+    NSRange rangeOfAuthor = NSMakeRange(NSMaxRange(rangeOfBy), lengthOfAuthorName);
+    
+    UIFont *font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:self.stringLabel.font.pointSize];
+    
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor alizarinColor] range:rangeOfTitle];
+    [attributedString addAttribute:NSFontAttributeName value:font range:rangeOfAuthor];
+    
+    return attributedString;
 }
 
 @end
