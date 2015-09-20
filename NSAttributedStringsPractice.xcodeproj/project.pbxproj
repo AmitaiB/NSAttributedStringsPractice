@@ -16,6 +16,7 @@
 		384B56911BAEFB0A004AD364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384B568F1BAEFB0A004AD364 /* LaunchScreen.storyboard */; };
 		384B569C1BAEFB0A004AD364 /* NSAttributedStringsPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 384B569B1BAEFB0A004AD364 /* NSAttributedStringsPracticeTests.m */; };
 		384B56A71BAEFB0A004AD364 /* NSAttributedStringsPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 384B56A61BAEFB0A004AD364 /* NSAttributedStringsPracticeUITests.m */; };
+		386BFF561BAF2BD500573C81 /* THDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386BFF551BAF2BD500573C81 /* THDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		384B56A21BAEFB0A004AD364 /* NSAttributedStringsPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSAttributedStringsPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		384B56A61BAEFB0A004AD364 /* NSAttributedStringsPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSAttributedStringsPracticeUITests.m; sourceTree = "<group>"; };
 		384B56A81BAEFB0A004AD364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		386BFF541BAF2BD500573C81 /* THDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDetailViewController.h; sourceTree = "<group>"; };
+		386BFF551BAF2BD500573C81 /* THDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				384B56871BAEFB0A004AD364 /* ViewController.h */,
 				384B56881BAEFB0A004AD364 /* ViewController.m */,
 				384B568A1BAEFB0A004AD364 /* Main.storyboard */,
+				386BFF541BAF2BD500573C81 /* THDetailViewController.h */,
+				386BFF551BAF2BD500573C81 /* THDetailViewController.m */,
 				384B568D1BAEFB0A004AD364 /* Assets.xcassets */,
 				384B568F1BAEFB0A004AD364 /* LaunchScreen.storyboard */,
 				384B56921BAEFB0A004AD364 /* Info.plist */,
@@ -277,6 +282,7 @@
 			files = (
 				382B70CA1BAEFE3800BEFE0A /* UIColor+FlatUI.m in Sources */,
 				384B56891BAEFB0A004AD364 /* ViewController.m in Sources */,
+				386BFF561BAF2BD500573C81 /* THDetailViewController.m in Sources */,
 				384B56861BAEFB0A004AD364 /* AppDelegate.m in Sources */,
 				384B56831BAEFB0A004AD364 /* main.m in Sources */,
 			);

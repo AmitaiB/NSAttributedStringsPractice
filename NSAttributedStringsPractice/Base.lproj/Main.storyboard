@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8m9-P9-KyO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -59,6 +60,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="240" y="429"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="5IV-Yg-jcP">
+            <objects>
+                <viewController id="8m9-P9-KyO" customClass="THDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xKN-x9-Woo"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Tc-dX-nVG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hGu-dM-tiP">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXu-ON-X1h">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="8J9-MT-aSc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8J9-MT-aSc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="8J9-MT-aSc"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EV8-VG-Lyt">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dXu-ON-X1h" firstAttribute="top" secondItem="xKN-x9-Woo" secondAttribute="bottom" id="7bX-lB-bEB"/>
+                            <constraint firstItem="EV8-VG-Lyt" firstAttribute="top" secondItem="dXu-ON-X1h" secondAttribute="bottom" constant="20" id="AOo-7d-RQ7"/>
+                            <constraint firstItem="dXu-ON-X1h" firstAttribute="leading" secondItem="hGu-dM-tiP" secondAttribute="leadingMargin" id="BNG-Mx-AWj"/>
+                            <constraint firstItem="dXu-ON-X1h" firstAttribute="leading" secondItem="EV8-VG-Lyt" secondAttribute="leading" id="ap9-9X-iPI"/>
+                            <constraint firstItem="5Tc-dX-nVG" firstAttribute="top" secondItem="EV8-VG-Lyt" secondAttribute="bottom" constant="15" id="eHN-cj-Wzp"/>
+                            <constraint firstItem="dXu-ON-X1h" firstAttribute="trailing" secondItem="hGu-dM-tiP" secondAttribute="trailingMargin" id="frF-gc-STr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EV8-VG-Lyt" secondAttribute="trailing" constant="-11" id="s0l-Ie-ahI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dXu-ON-X1h"/>
+                                <exclude reference="EV8-VG-Lyt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7bX-lB-bEB"/>
+                                <exclude reference="BNG-Mx-AWj"/>
+                                <exclude reference="ap9-9X-iPI"/>
+                                <exclude reference="frF-gc-STr"/>
+                                <exclude reference="AOo-7d-RQ7"/>
+                                <exclude reference="s0l-Ie-ahI"/>
+                                <exclude reference="eHN-cj-Wzp"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="dXu-ON-X1h"/>
+                                <include reference="EV8-VG-Lyt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7bX-lB-bEB"/>
+                                <include reference="BNG-Mx-AWj"/>
+                                <include reference="ap9-9X-iPI"/>
+                                <include reference="frF-gc-STr"/>
+                                <include reference="AOo-7d-RQ7"/>
+                                <include reference="s0l-Ie-ahI"/>
+                                <include reference="eHN-cj-Wzp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="speechTextView" destination="EV8-VG-Lyt" id="YOw-iZ-Vbq"/>
+                        <outlet property="titleLabel" destination="dXu-ON-X1h" id="cav-vy-On5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wX7-ES-10s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="429"/>
         </scene>
     </scenes>
 </document>
