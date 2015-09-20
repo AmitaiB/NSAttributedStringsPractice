@@ -17,31 +17,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"The Republic by Plato"];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"The Republic by Plato"];
+    
+    NSRange rangeOfTitle = [attributedString.string rangeOfString:@"The Republic"];
+    
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor alizarinColor] range:rangeOfTitle];
+    
+    UIFont *font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:self.stringLabel.font.pointSize];
+    
+    NSRange rangeOfAuthor = [attributedString.string rangeOfString:@"Plato"];
+    
+    [attributedString addAttribute:NSFontAttributeName value:font range:rangeOfAuthor];
+    
+    
+    
     self.stringLabel.attributedText = attributedString;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:textField.text];
-
-    NSRegularExpression *titleRegex = [NSRegularExpression regularExpressionWithPattern:@"(.*)(?=:)|(.*)(?= by)" options:NSRegularExpressionCaseInsensitive error:nil];
-    NSRange rangeOfTitle = [titleRegex rangeOfFirstMatchInString:textField.text options:NSMatchingReportCompletion range:NSRangeFromString(textField.text)];
     
-    NSRegularExpression *subtitleRegex = [NSRegularExpression regularExpressionWithPattern:@"(?<=: )(.*)(?= by)" options:NSRegularExpressionCaseInsensitive error:nil];
-    NSRange rangeOfSubtitle = [subtitleRegex rangeOfFirstMatchInString:textField.text options:NSMatchingReportCompletion range:NSMakeRange(0, textField.text.length)];
-    
-    
-    NSRegularExpression *bylineRegex = [NSRegularExpression regularExpressionWithPattern:@"(?<= by )(.*)(?=\\\\()" options:NSRegularExpressionCaseInsensitive error:nil];
-    NSRange rangeOfByline = [bylineRegex rangeOfFirstMatchInString:textField.text options:0 range:NSRangeFromString(textField.text)];
-    
-    
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor peterRiverColor] range:rangeOfTitle];
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Impact" size:18.0f] range:[textField.text rangeOfString:textField.text]];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor carrotColor] range:rangeOfByline];
-    
-    
-//    self.stringLabel.text = nil;
-    self.stringLabel.attributedText = [attributedString copy];
     
     return YES;
 }
